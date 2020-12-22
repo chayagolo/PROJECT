@@ -1,0 +1,22 @@
+<form *ngIf="form" class="form-wrapper" [formGroup]="form" (ngSubmit)="calculateDistance();">
+    <div class="form-group">
+        <label for="from">מוצא</label>
+        <input type="text" formControlName="from" class="form-control"
+         id="from" aria-describedby="from" placeholder="">
+        <small id="from" class="form-text text-muted error" *ngIf="form.get('from')!.errors?.required"
+        >חובה להזין מוצא.</small>
+      </div>
+      <div class="form-group">
+        <label for="to">יעד</label>
+        <input type="text" formControlName="to" class="form-control"
+         id="to" aria-describedby="to" placeholder="">
+        <small id="to" class="form-text text-muted error" *ngIf="form.get('to')!.errors?.required"
+        >חובה להזין יעד.</small>
+      </div>
+
+
+   
+      <button type="submit" class="btn-btn-primary-btn-lg-btn-block">הצג את המרחק</button>
+
+    <!---button class="btn-submit" type="submit" [disabled]="!form.valid">חשב</button--->
+</form>
